@@ -2,7 +2,7 @@
 import store from '@/stores'
 </script>
 <template>
-  <span class="cursor-pointer" @click="store.changeTheme">
+  <span class="cursor-pointer" @click="store.toggleTheme">
     <!-- system icon -->
     <svg
       v-if="store.theme === 'system'"

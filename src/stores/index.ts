@@ -4,11 +4,17 @@ export type THEME = 'system' | 'light' | 'dark'
 
 const store = reactive<{
   theme: THEME
-  changeTheme: () => void
+  apiKey?: string
+  toggleTheme: () => void
+  setApiKey: (apiKey: string) => void
 }>({
   theme: 'system',
-  changeTheme() {
+  apiKey: undefined,
+  toggleTheme() {
     this.theme = this.theme === 'system' ? 'light' : this.theme === 'light' ? 'dark' : 'system'
+  },
+  setApiKey(apiKey: string) {
+    this.apiKey = apiKey
   }
 })
 
