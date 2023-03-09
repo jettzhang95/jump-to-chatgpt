@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import FunctionIcons from '@/components/function-icons/FunctionIcons.vue'
+import SettingModal from '@/components/setting-modal/SettingModal.vue'
+import store from '@/stores'
 </script>
 
 <template>
   <div class="w-screen h-screen flex">
-    <nav class="w-64 p-2 bg-gray-900 text-gray-100 flex flex-col">
+    <setting-modal v-if="store.settingVisible" />
+    <nav class="w-64 px-2 py-4 bg-gray-900 text-gray-100 flex flex-col">
       <div class="grow"></div>
       <function-icons />
     </nav>
